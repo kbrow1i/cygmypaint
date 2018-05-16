@@ -1,0 +1,23 @@
+NAME="mypaint"
+VERSION=1.3.0
+RELEASE=1
+CATEGORY=libs
+SUMMARY="A fast and easy graphics application for digital painters"
+DESCRIPTION="MyPaint is a fast and easy graphics application for digital painters.
+It lets you focus on the art instead of the program. You work on your
+canvas with minimum distractions, bringing up the interface only when
+you need it."
+HOMEPAGE="http://mypaint.org"
+SRC_URI="https://github.com/mypaint/libmypaint/releases/download/v${VERSION}/lib${NAME}-${VERSION}.tar.xz"
+
+SRC_DIR="libmypaint-${VERSION}"
+
+DEPEND="pkgconfig(json-c)"
+
+PKG_NAMES="libmypaint1.3_0 libmypaint-devel girepository-MyPaint"
+libmypaint1_3_0_CONTENTS="usr/bin/cygmypaint-1-3-0.dll usr/share/doc/ usr/share/locale/"
+libmypaint1_3_0_SUMMARY="${SUMMARY} (runtime)"
+libmypaint_devel_CONTENTS="usr/include/libmypaint/ usr/lib/libmypaint.dll.a usr/lib/pkgconfig/libmypaint.pc"
+libmypaint_devel_SUMMARY="${SUMMARY} (development)"
+girepository_MyPaint_SUMMARY="${SUMMARY} (GObject Introspection)"
+girepository_MyPaint_CONTENTS="usr/*/gir*/MyPaint-1.3.*"
